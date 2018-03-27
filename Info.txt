@@ -1,0 +1,14 @@
+Url: https://o7planning.org/en/11793/crud-example-with-spring-boot-rest-and-angularjs
+to create a simple application (Crud Example) that combines: 
+	-BackEnd: Spring Boot
+	-Servicios Rest and  
+	-Frontend: AngularJS 
+-----------------------------------------------------------------------------------------------
+AngularJS is an open source library. It is based on Javascript and helps you build Single Page applications. 
+In this lesson, we are going to create a page that displays the list of employees, and allows you to add, delete, and edit employees.
+
+The issues that will be mentioned in this lesson:
+1) Create a Spring Boot application.
+2) Create REST APIs with the  functions:  Querying, creating, editing, deleting data
+3) AngularJS calls REST APIs to query data and display the data on  the interface. 
+   AngularJS calls the REST APIs to create, delete, and edit the data.

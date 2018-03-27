@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <title>AngularJS</title>
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.js"></script>       
+      <script th:src="@{/main.js}"></script>
+      
+      <link th:href="@{/main.css}" rel="stylesheet" />       
+   </head>
+   
+   <body ng-app="EmpleadoManagement" ng-controller="EmpleadoController">
+      <h3>CRUD: Spring Boot + Rest + AngularJS</h3>
+      <form ng-submit="submitEmpleado()">
+         <table border="0">
+            <tr>
+               <td>Emp Id</td>
+               <td>{{empleadoForm.empId}}</td>
+            </tr>
+            <tr>
+               <td>Emp No</td>
+               <td><input type="text" ng-model="empleadoForm.empNo" /></td>
+            </tr>
+            <tr>
+               <td>Emp Name</td>
+               <td><input type="text" ng-model="empleadoForm.empName"  /></td>
+            </tr>
+             <tr>
+               <td>Posicion</td>
+               <td><input type="text" ng-model="empleadoForm.empPosition"  /></td>
+            </tr>
+            <tr>
+               <td colspan="2"><input type="submit" value="Guardar" class="blue-button" /></td>
+               <td><input type="button" class="create-button" value="Limpiar" ng-click="limpiaCampos()"/></td>
+            </tr>
+         </table>
+      </form>
+      <br/>
+      <h4>Listado de empleados:</h4>
+      <table border="1">
+         <tr>
+            <th>Emp Id</th>
+            <th>Emp No</th>
+            <th>Emp Name</th>
+            <th>Posicion</th>
+            <th>Editar</th>
+            <th>Borrar</th>
+         </tr>
+         <!-- $scope.empleados -->
+         <tr ng-repeat="empleado in empleados">
+            <td> {{ empleado.empId }}</td>
+            <td> {{ empleado.empNo }}</td>
+            <td> {{ empleado.empName }}</td>
+            <td> {{ empleado.empPosition }}</td>
+            <td><a ng-click="editEmpleado(empleado)" class="edit-button">Editar</a></td>
+            <td><a ng-click="deleteEmpleado(empleado)" class="delete-button">Borrar</a></td>
+         </tr>
+      </table>
+   </body>
+</html>
